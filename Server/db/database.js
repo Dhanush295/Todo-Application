@@ -11,6 +11,6 @@ const todoSchema = new mongoose.Schema({
 });
 
 
-const Users = mongoose.model('Users', userSchema);
-const Todo = mongoose.model("Todo", todoSchema);
-module.exports = {Users, Todo}
+const USERS = mongoose.model('Users', userSchema);
+const TODO = mongoose.model("Todo", todoSchema);
+module.exports = {USERS, TODO}

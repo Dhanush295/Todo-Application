@@ -3,6 +3,7 @@ import {  BrowserRouter as Router,  Routes,  Route} from "react-router-dom";
 import Login from '../components/Login';
 import Navbar from '../components/Navbar';
 import Signup from '../components/Signup';
+import CreateTodo from '../components/createTodo';
 import Update from '../components/Update';
 
 
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path ={"/login"} element={<Login />}></Route>
           <Route path ={"/signup"} element={<Signup />}></Route>
+          <Route path ={"/createtodo"} element={<CreateTodo />}></Route>
           <Route path ={"/update"} element={<Update/>}></Route>
         </Routes>
       </Router>

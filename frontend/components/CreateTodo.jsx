@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Card from '@mui/material/Card';
 import { Typography } from '@mui/material';
 import TextField from '@mui/material/TextField';
@@ -5,6 +6,13 @@ import Button from '@mui/material/Button';
 
 
 function CreateTodo(){
+=======
+function createTodo(){
+
+
+
+
+>>>>>>> master
 
     return <div>
     <center>
@@ -21,4 +29,9 @@ function CreateTodo(){
 
 }
 
+<<<<<<< HEAD
 export default CreateTodo;
+=======
+
+export default createTodo;
+>>>>>>> master

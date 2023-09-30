@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { USERS, TODOS } = require("../db/database");
+<<<<<<< HEAD
 const { SECRET, configLogin } = require("../config/config")
 const jwt = require("jsonwebtoken");
 
@@ -8,23 +9,44 @@ const jwt = require("jsonwebtoken");
 router.post('/signup', async (req, res) => {
     const userdata = req.body;
     const user = await USERS.findOne({ username: userdata.username });
+=======
+const jwt = require('jsonwebtoken');
+import { SECRET } from "../authentication/auth";
+import { authenticate } from "../authentication/auth";
+
+router.post('/signup', async (req, res) => {
+    const userdata = req.body;
+    const user = await USERS.findOne({username: userdata.username});
+>>>>>>> master
     if (user){
         res.status(404).json({message: "Username Already Exist"});
     }
     else{
+<<<<<<< HEAD
         const token = jwt.sign({ userdata}, SECRET, { expiresIn: "1h" });
+=======
+        token = jwt.sign(userdata,SECRET,{ expiresIn: "1h" });
+>>>>>>> master
         const newUser = new USERS(userdata);
         newUser.save();
         res.json({ message: 'User created successfully', token: token });
     }
 });
 
+<<<<<<< HEAD
 router.post('/login', configLogin, async (req, res) => {
+=======
+router.post('/login',authenticate, async (req, res) => {
+>>>>>>> master
     try {
         const { username } = req.headers;
 
         // Ensure that the collection name is correctly specified (e.g., "Users")
         const user = await USERS.findOne({ username: username });
+<<<<<<< HEAD
+=======
+
+>>>>>>> master
         if (user) {
             res.json({ message: "User logged in successfully" });
         } else {
@@ -37,7 +59,11 @@ router.post('/login', configLogin, async (req, res) => {
 });
 
 
+<<<<<<< HEAD
 router.get('/home',async(req,res) =>{
+=======
+router.get('/home',authenticate, async(req,res) =>{
+>>>>>>> master
     try {
         const todos = await TODOS.find(); // Retrieve all todos from the database
         res.json({ todos }); // Respond with the list of todos
@@ -47,7 +73,11 @@ router.get('/home',async(req,res) =>{
       }
 });
 
+<<<<<<< HEAD
 router.post("/todo", async (req, res) => {
+=======
+router.post("/todo",authenticate, async (req, res) => {
+>>>>>>> master
     try {
       let todoitem = req.body;
   
@@ -70,7 +100,11 @@ router.post("/todo", async (req, res) => {
     }
   });
   
+<<<<<<< HEAD
 router.put('/todo/:id', async(req,res)=>{
+=======
+router.put('/todo/:id',authenticate, async(req,res)=>{
+>>>>>>> master
     let todo = await TODOS.findByIdAndUpdate(req.params.id, req.body, { new: true });
     if(todo){
         res.status(200).json({message:"Todo updated Successfully"});
@@ -80,7 +114,11 @@ router.put('/todo/:id', async(req,res)=>{
     }
 });
 
+<<<<<<< HEAD
 router.delete('/todo/:id',async (req, res) => {
+=======
+router.delete('/todo/:id',authenticate, async (req, res) => {
+>>>>>>> master
     try {
       const todoId = req.params.id;
   
@@ -98,4 +136,8 @@ router.delete('/todo/:id',async (req, res) => {
     }
   });
 
+<<<<<<< HEAD
 module.exports = router
+=======
+module.exports = router
+>>>>>>> master

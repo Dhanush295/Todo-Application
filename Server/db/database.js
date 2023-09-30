@@ -12,5 +12,10 @@ const todoSchema = new mongoose.Schema({
 
 
 const USERS = mongoose.model('Users', userSchema);
+<<<<<<< HEAD
 const TODO = mongoose.model("Todo", todoSchema);
 module.exports = {USERS, TODO}
+=======
+const TODOS = mongoose.model("Todo", todoSchema);
+module.exports = {USERS, TODOS}
+>>>>>>> master

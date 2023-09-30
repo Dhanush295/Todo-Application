@@ -15,7 +15,11 @@ function Navbar(){
             <div style={{display: "flex", marginRight:10}}>
                 <Button variant="contained">SignUp</Button>
             </div>
+<<<<<<< HEAD
             <div style={{marginRight:10}}>
+=======
+            <div style={{display: "flex", marginRight:10}}>
+>>>>>>> master
                 <Button variant="contained">Login</Button>
             </div>
         </div>

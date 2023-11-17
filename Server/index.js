@@ -10,7 +10,7 @@ app.use(express.json());
 app.use("/users",userRouter);
 
 mongoose
-    .connect('mongodb+srv://dhanu0529:I1l1Ux1JdPh29c7s@cluster0.h5b5s2t.mongodb.net/?retryWrites=true&w=majority', {
+    .connect('mongodb Url', {
         useNewUrlParser: true,
         useUnifiedTopology: true,
         dbName: 'todo'
